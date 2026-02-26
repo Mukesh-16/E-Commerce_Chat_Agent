@@ -72,7 +72,7 @@ async function createVectorSearchIndex(): Promise<void> {
                     {
                         "type": "vector",
                         "path": "embedding",
-                        "numDimensions": 768,
+                        "numDimensions": 3072,
                         "similarity": "cosine"
                     }
                 ]
@@ -160,7 +160,7 @@ async function seedDatabase(): Promise<void> {
                 [record],
                 new GoogleGenerativeAIEmbeddings({
                     apiKey: process.env.GOOGLE_API_KEY,
-                    model: "text-embedding-004"
+                    model: "gemini-embedding-001"
                 }),
                 {
                     collection: collection as any,

@@ -9,8 +9,6 @@ import { MongoDBAtlasVectorSearch } from "@langchain/mongodb"
 import { MongoClient } from "mongodb"
 import { z } from "zod"
 import "dotenv/config"
-import { any } from "zod/mini"
-import th from "zod/v4/locales/th.js"
 
 async function retryWithBackOff<T>(
     fn: () => Promise<T>,
@@ -73,7 +71,7 @@ export async function callAgent(client: MongoClient, query: string, threadId: st
                     const vectorStore = new MongoDBAtlasVectorSearch(
                         new GoogleGenerativeAIEmbeddings({
                             apiKey: process.env.GOOGLE_API_KEY,
-                            model: "text-embedding-004"
+                            model: "gemini-embedding-001"
                         }),
                         dbConfig
                     )
@@ -202,7 +200,11 @@ export async function callAgent(client: MongoClient, query: string, threadId: st
             messages: [new HumanMessage(query)]
         }, {
             recursionLimit: 15,
-            configurable: { threadId: threadId }
+            configurable: { 
+                thread_id: threadId,
+                checkpoint_ns: "chat",
+                checkpoint_id: Date.now().toString()
+            }
         })
 
         const response = finalState.messages[finalState.messages.length - 1].content
