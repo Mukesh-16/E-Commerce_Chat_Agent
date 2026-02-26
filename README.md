@@ -24,39 +24,11 @@ In this project, we'll create a sophisticated **AI Agent** using an **agentic ap
 
 ---
 
-<table>
-<tr>
-<td width="50%">
-
-### 🏗️ **Core Concepts**
-- ✨ **Agentic AI Architecture**
-- 🗃️ **MongoDB Atlas Vector Search**
-- 🌊 **LangGraph Workflow Orchestration**
-- 💬 **Conversational State Management**
-
-</td>
-<td width="50%">
-
-### 🛠️ **Practical Skills**
-- 🔗 **API Integration** (OpenAI & Gemini)
-- ⚛️ **React Frontend Development**
-- 🌐 **RESTful API Design**
-- 📊 **Database Seeding & Management**
-
-</td>
-</tr>
-</table>
-
----
-
 ## 🚀 Prerequisites
-
-Before we start, make sure you have:
 
 **🔑 API Keys Needed**
 - [Google AI API Key](https://aistudio.google.com/app/apikey)
 - [MongoDB Atlas Account](https://www.mongodb.com/cloud/atlas)
-
 
 ---
 
